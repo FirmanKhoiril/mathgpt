@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.register__container {
+  @apply px-2 h-screen overflow-hidden sm:min-h-screen relative bg-gradient-to-t from-[85.47%] from-[#01092A] to-[#04d4b4] to-[122.25%] text-[#01092A] flex justify-end w-full items-end;
+}
+.register__input {
+  @apply placeholder:text-black/60 text-sm sm:font-[600] rounded-[20px] sm:rounded-[5px] h-[57px] outline-none border w-full border-black/40 sm:border-black/10 px-4 sm:pl-14;
+}
+
+.register__input__label {
+  @apply absolute sm:static -top-[9px] left-7 text-[#33363F] text-[12px] sm:text-sm sm:text-black;
+}
+
+.sosial__media__container {
+  @apply flex mx-auto items-center pt-1 gap-4;
+}
+
+.sosial__media__container__button {
+  @apply w-[75px] rounded-[5px] items-center flex justify-center h-[50px] border border-black/10;
+}
+
+.main__section {
+  @apply bg-white text-black dark:bg-gradient-to-t from-[85.47%] from-[#01092A] to-[#04d4b4] to-[122.25%] dark:text-white;
+}
+
+.contact__container {
+  @apply min-h-screen flex flex-row pb-4 sm:pb-10 px-0 sm:px-10 relative w-full overflow-hidden;
+}
+
+.contact__container__small__devices {
+  @apply w-full md:max-w-[318px] h-[810px] sm:border sm:rounded-l-[5px] sm:border-black/50 dark:sm:border-white/50 overflow-y-auto scrollbar-none;
+}
+
+.contact__button__goback {
+  @apply flex w-[30px]  rounded-full h-[30px] items-center  border border-[#A0A7B5] bg-black justify-center;
+}
+
+.contact__container__medium__large__devices {
+  @apply h-[810px] scrollbar-none  rounded-r-[5px] border-black/50 dark:border-white/50 overflow-y-auto w-full flex-col;
+}
+
+.contact__left__section {
+  @apply w-full h-[70px] px-4 lg:px-10 border-b py-10 justify-between border-black/50 dark:border-white/50  items-center flex;
+}
+
+.navbar__large__devices {
+  @apply bg-white dark:shadow-none shadow-[0px_4px_4px_0px] shadow-black/30 dark:bg-[rgba(1,_9,_42,_0.40)] px-4 md:px-8 rounded-full flex justify-between items-center  h-[100px] w-full;
+}
+
+.navbar__link {
+  @apply w-[100px] md:w-[120px] lg:w-[180px] h-[70px] rounded-full border border-[rgb(21_,199_,179)] dark:border-none dark:bg-black;
+}
+
+.navbar__profile__user {
+  @apply bg-primary w-[130px] px-1 md:w-[155px] lg:w-[215px] justify-center h-[70px] rounded-full flex items-center gap-1;
+}
+
+.navbar__theme__button {
+  @apply w-[95px] flex items-center justify-center h-[95px] rounded-full dark:shadow-none shadow-black/30 shadow-[0px_4px_4px_0px] dark:bg-black;
+}
+
+.navbar__logo {
+  @apply w-[70px] h-[70px] flex items-center justify-center rounded-full bg-black;
+}
+
+.upload__file {
+  @apply w-[140px] rounded-[5px] border-dashed border-2 border-black/30 text-white dark:border-white/50 h-[140px] flex items-center justify-center bg-primary/80 dark:bg-primary/50 text-center flex-col;
+}
+
+.side__history__goback {
+  @apply w-[85px]  hidden sm:flex items-center justify-center h-[82px] rounded-r-full bg-[#052F46];
+}
+
+.side__history__container {
+  @apply hidden sm:flex relative flex-col gap-8 min-h-[90vh];
+}
+
+.register__right__section {
+  @apply w-1/2 font-openSans h-full bg-rightRegister shadow-black/10 shadow-[2px_8px_8px_0px] rounded-[0px_30px_30px_0px] flex flex-col justify-between gap-4;
+}
+
+.register__logo {
+  @apply w-[120px] h-[120px] flex justify-center items-center rounded-[10px] bg-white shadow-[0px_4px_4px_0px] shadow-black/30;
+}
+
+.foobar__section {
+  @apply sm:hidden flex justify-around items-center border-t border-black dark:border-white dark:bg-foobar bg-white z-20 text-black dark:text-white sticky w-full h-[90px]  bottom-0;
+}
+
+.foobar__link {
+  @apply flex gap-2 flex-col text-[12px];
+}
+
+.dropdown__selected__ai__container {
+  @apply flex h-[40px] w-[147px] bg-white px-6 dark:bg-foobar border text-primary border-[#15C7B3] rounded-[5px] items-center justify-around;
+}
+
+.customization__container {
+  @apply w-[194px]  text-gray sm:w-[189px]  bg-foobar border justify-around border-white rounded-[5px]  py-4 flex flex-col items-center px-1;
+}
+
+.preview__container {
+  @apply w-full px-3 justify-center items-center flex sm:hidden flex-col gap-4 pb-6 pt-8;
+}
+
+.register__mobile {
+  @apply sm:hidden h-[600px] pt-3 pb-6 justify-between flex-col rounded-t-3xl w-full flex bg-white;
+}
+
+.home__section {
+  @apply flex flex-col overflow-hidden h-full sm:h-screen gap-7 sm:gap-2 relative w-full;
+}
+
+.home__image__projectmanagement {
+  @apply absolute right-6 sm:right-80 sm:inset-y-[25%] w-[72px] sm:w-[132px] sm:h-[168px] h-[80px] rounded-[10px] border border-black/30 dark:border-white/30 top-[86px] flex justify-center items-center rotate-[40deg];
+}
+
+.home__large__text {
+  @apply w-[90%] lg:w-[1130px] sm:block hidden leading-[101px] lg:leading-[117.563px] text-center text-[46px] md:text-[56px] lg:text-[96px] font-[800] mx-auto;
+}
+
+.home__large__subtext {
+  @apply font-semibold sm:font-[400] text-[36px] md:text-[48px] lg:text-[96px] text-center;
+}
+
+.home__card__explore {
+  @apply flex flex-col sm:flex-row flex-wrap gap-5 mx-auto justify-center;
+}
+
+.email__preview__container {
+  @apply w-full mx-auto pb-4 pt-8 gap-3 flex sm:hidden justify-center items-center flex-col max-w-[454px];
+}
+
+.email__label {
+  @apply font-semibold text-[14px] font-openSans;
+}
+
+.contact__message__container {
+  @apply max-w-[85%] h-full px-6 flex flex-col gap-2 text-black/70 dark:text-gray;
+}
+
+.contact__message__attachment__image__name {
+  @apply absolute bg-white  dark:bg-foobar text-[10px] w-full h-[24px] flex items-center justify-center border-black/50 border dark:border-white/50 rounded-b-[5px];
+}
+
+.preview__send__email__container {
+  @apply w-full bg-primary max-w-[454px] h-[56px] text-white flex items-center justify-between px-2 lg:px-4 rounded-[5px];
+}
+.btn__make__photo {
+  @apply w-[140px] rounded-[5px] border border-black/30 text-white dark:border-white/50 h-[140px] flex items-center justify-center bg-primary/80 dark:bg-primary/50 text-center flex-col;
+}
+
+.btn__toogle__customization {
+  @apply w-[194px] text-[14px] flex-row-reverse sm:w-[189px] flex sm:justify-center justify-around items-center h-[40px]  rounded-[5px] border sm:text-[20px] border-[#15C7B3] text-primary;
+}
+
+.card__contact {
+  @apply w-full relative border flex gap-1 flex-row p-3 border-black/10 dark:border-white/10 h-[80px];
+}
+
+.card__explore {
+  @apply w-[260px] h-[120px] bg-gradient-to-b shadow-[0px_4px_4px_0px] shadow-black/30 from-[#040C34] text-white from-[61%] to-[154%] to-[#15C7B3] border  rounded-[10px] py-6 px-4 gap-2 flex items-center;
+}
+
+.card__history {
+  @apply w-[95%] mx-auto shadow-[0px_4px_4px_0px] shadow-black/40 px-1 h-[60px] bg-foobar gap-1 rounded-[10px] flex justify-around items-center;
+}
+
+.card__plans {
+  @apply border rounded-[10px] dark:shadow-none shadow-black/30 shadow-[0px_4px_4px_0px] mx-auto sm:mx-0;
+}
+
+.card__gpt {
+  @apply w-[280px]  sm:w-[345px] lg:w-[560px]  xl:w-[629px] dark:shadow-none shadow-[0px_2px_2px_0px] shadow-black/30  justify-start rounded-[5px] bg-primary;
+}
+
+.card__user {
+  @apply justify-center  ml-auto text-white bg-[rgb(51,_54,_63)]  dark:bg-[rgba(51,_54,_63,_0.60)] border border-white rounded-[5px_5px_0px_5px] w-[265px] lg:w-[544px] px-2  sm:px-4 py-2 sm:py-4 text-[12px];
+}
+
+.form__email__choose__contact {
+  @apply w-full h-[163px]  flex flex-col pb-4 px-[90px]  [&>*:nth-child(3)]:justify-end items-center gap-4 border  border-black/50 dark:border-white rounded-[5px];
+}
+
+.input__email__choose__contact {
+  @apply text-[12px]  text-white pl-12 placeholder:text-white outline-none border border-white rounded-[5px] w-[281px] h-10 bg-foobar;
+}
+
+.input__sending__problems {
+  @apply outline-none border rounded-[5px] h-[45px] text-sm pl-20 pr-3 py-3.5 bg-white dark:border-white border-black dark:bg-foobar w-full placeholder:text-black/70 dark:placeholder:text-white/50;
+}
+
+.input__email__add__name {
+  @apply text-[12px] w-[245px] sm:w-[379px] text-white h-[30px] sm:h-[35px] rounded-full border placeholder:text-white border-white pl-16 outline-none bg-foobar;
+}
+
+.ai__solve__container {
+  @apply w-[90%] relative sm:w-[65%] rounded-[5px] flex-col justify-between flex mx-auto border-black/30 dark:border-white/50 h-auto sm:h-[808px] border;
+}
+
+.ai__solve__top__section {
+  @apply flex relative h-[70px] w-full border px-2 sm:px-4 text-center border-black/30 dark:border-white/50 justify-center sm:justify-start items-center gap-4 lg:gap-8;
+}
+
+.customization__dropdown {
+  @apply w-[160px] sm:w-[176px] bg-foobar border border-white h-[25px] rounded-[5px] text-[12px] sm:text-sm  flex justify-between px-2 gap-4 items-center;
+}
