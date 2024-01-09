@@ -2,9 +2,8 @@ import { Send } from "../../assets";
 import Button from "../button/Button";
 import { MdMicNone } from "react-icons/md";
 import { FaRegKeyboard } from "react-icons/fa6";
-import MathInput from "react-math-keyboard";
-import React, { useRef, useState } from "react";
-
+import "//unpkg.com/mathlive";
+import  { useEffect, useRef, useState } from "react";
 
 const SendingProblems = ({  isPlaceholder }) => {
   const [isMathKeyboard, setIsMathKeyboard] = useState(false)
@@ -15,6 +14,21 @@ const SendingProblems = ({  isPlaceholder }) => {
     // Add logic for handling form submission, if needed, examp: after user submitting a problem that they have
   };
 
+  // Customize the mathfield when it is created
+  useEffect(() => {
+    try {
+      firstMathfieldRef.current.mathVirtualKeyboardPolicy = "manual";
+    firstMathfieldRef.current.addEventListener("focusin", (evt) => 
+      window.mathVirtualKeyboard.show()
+    );
+    firstMathfieldRef.current.addEventListener("focusout", (evt) => 
+      window.mathVirtualKeyboard.hide()
+    );
+    } catch (error) {
+      console.log(error)
+    }
+  }, []);
+
   const toogleIsMathKeyboard = () => setIsMathKeyboard(!isMathKeyboard)
 
   return (
@@ -22,9 +36,17 @@ const SendingProblems = ({  isPlaceholder }) => {
       {/* Input Field for Math Problems */}
       <Button icon={<FaRegKeyboard size={20} color={isMathKeyboard && "#15C7B3"} />} className={`absolute left-6 ${isMathKeyboard ? "bottom-5" : "bottom-4"} z-20`} onClick={toogleIsMathKeyboard} />
     {isMathKeyboard ? (
-       <div className=" pl-14 bg-white dark:bg-foobar w-full max-w-[99%]">
+       <div className="bg-white dark:bg-foobar w-full">
        {/* Math Live */}
-                   <MathInput
+       <math-field 
+        ref={firstMathfieldRef} 
+        style={{fontSize: "1.5rem", display: 'block', border: '1px solid black', paddingLeft: '3.2rem', paddingRight: '4.5rem' }}
+
+        onInput={evt => setMathValue(evt.target.value)}
+      >
+        {mathValue}
+      </math-field>
+                   {/* <MathInput
                      setValue={setMathValue}
                     
                      setMathfieldRef={(mathfield) =>
@@ -32,7 +54,7 @@ const SendingProblems = ({  isPlaceholder }) => {
                      }
                      
                      divisionFormat="obelus"
-                   />
+                   /> */}
             </div>
     ) : (
       <input type="text" className="input__sending__problems" placeholder={isPlaceholder ? `${isPlaceholder}` : "Write a math Problem..."} />

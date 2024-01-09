@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "countries-list": "^3.0.6",
+    "mathlive": "^0.98.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-html5-camera-photo": "^1.5.11",
