@@ -6,7 +6,7 @@ import MathInput from "react-math-keyboard";
 import React, { useRef, useState } from "react";
 
 
-const SendingProblems = ({ isMic, isPlaceholder }) => {
+const SendingProblems = ({  isPlaceholder }) => {
   const [isMathKeyboard, setIsMathKeyboard] = useState(false)
   const firstMathfieldRef = useRef();
   const [mathValue, setMathValue] = useState("");
