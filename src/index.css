@@ -11,6 +11,16 @@
   @apply placeholder:text-black/60 text-sm sm:font-[600] rounded-[20px] sm:rounded-[5px] h-[57px] outline-none border w-full border-black/40 sm:border-black/10 px-4 sm:pl-14;
 }
 
+.edit__profile__section {
+  @apply fixed inset-0 max-w-[400px] p-4 max-h-[380px] dark:text-white text-black flex flex-col gap-2 mx-auto top-1/4 border dark:border-white/20 rounded-md  z-10 bg-white dark:bg-black
+}
+
+.input__edit__profile {
+  @apply outline-none placeholder:text-[12px] rounded-sm text-[12px] py-1.5 px-2.5 dark:bg-black bg-white focus:border-[#15C7B3] border dark:border-white/10 border-black/40
+}
+.select__edit__profile {
+  @apply rounded-sm mt-1 text-[12px] py-1.5 px-2.5 border bg-white dark:bg-black dark:border-white/10 border-black/40
+}
 .register__input__label {
   @apply absolute sm:static -top-[9px] left-7 text-[#33363F] text-[12px] sm:text-sm sm:text-black;
 }
@@ -76,7 +86,7 @@
 }
 
 .side__history__container {
-  @apply hidden sm:flex relative flex-col gap-8 min-h-[90vh];
+  @apply hidden sm:flex relative flex-col gap-8 min-h-[90vh] pb-10;
 }
 
 .register__right__section {

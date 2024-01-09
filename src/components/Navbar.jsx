@@ -90,15 +90,12 @@ const Navbar = () => {
             <Link to={"/plans"}>
               <Button onClick={nonActiveState} text={" My Plan"} type="button" className={`${pathname === "/plans" ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />
             </Link>
-            <Link to={"/contact"}>
-              <Button onClick={nonActiveState} text={" Email"} type="button" className={`${pathname === "/contact" ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />
-            </Link>
 
-            <button type="button" className={`navbar__profile__user`}>
+            <Link to={"/profile"} className={`navbar__profile__user`}>
               <span className="font-semibold text-[18px] lg:text-[24px] text-white">John_D</span>
               <MdArrowDropDown size={25} />
               <img src={user} width={45} height={45} alt="User Profile" />
-            </button>
+            </Link>
           </div>
         </div>
         <Button type="button" onClick={toogleTheme} icon={dark ? <IoSunny size={30} /> : <CiDark size={30} color="black" />} className="navbar__theme__button" />

@@ -10,6 +10,10 @@ export const useGlobalStore = create((set) => ({
   showPassword: false,
   setShowPassword: (showPassword) => set({ showPassword }),
 
+
+  isEditProfile: false,
+  setIsEditProfile: (isEditProfile) => set({isEditProfile}),
+
   // Customization Modal Visibility State
   showCustomization: false,
   setShowCustomization: (showCustomization) => set({ showCustomization }),

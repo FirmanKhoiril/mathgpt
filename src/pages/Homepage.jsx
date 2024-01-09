@@ -29,7 +29,7 @@ const Homepage = () => {
     case previewEmail:
       return (
         <div className="w-full">
-          <EmailPreview />;
+          <EmailPreview />
           <div className="hidden sm:flex">
             <Email />
           </div>

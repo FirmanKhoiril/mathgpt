@@ -1,7 +1,7 @@
-import Contact from "./Contact";
 import History from "./History";
 import Homepage from "./Homepage";
 import Plans from "./Plans";
 import Register from "./auth/Register";
+import Profile from "./profile";
 
-export { Contact, History, Homepage, Plans, Register };
+export {  History, Homepage, Plans, Profile , Register};

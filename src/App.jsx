@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Contact, History, Homepage, Plans, Register } from "./pages";
-import { Foobar, Navbar, SideHistory } from "./components";
+import {  History, Homepage, Plans, Profile, Register } from "./pages";
+import { EditProfileModal, Foobar, Navbar, SideHistory } from "./components";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 import { useSelectedAi } from "./hooks/useSelectedAi";
 import { useGlobalStore } from "./context/useGlobalStore";
@@ -8,12 +8,13 @@ import { useGlobalStore } from "./context/useGlobalStore";
 const App = () => {
   const { pathname } = useLocation();
   const { selectedAi } = useSelectedAi();
-  const { sendMail, previewImage, previewEmail, dark } = useGlobalStore();
+  const { sendMail, previewImage, previewEmail, dark,isEditProfile } = useGlobalStore();
   const selectedAiSolve = selectedAi.get("selected");
 
   return (
     <main className={`${dark ? "dark" : "light"} relative w-full font-roboto overflow-hidden h-full`}>
       {/* dark condition for themes */}
+      {isEditProfile && <EditProfileModal />}
       <div className="main__section">
         {pathname !== "/register" ? <Navbar /> : ""}
 
@@ -31,8 +32,8 @@ const App = () => {
               }
             />
             <Route path="/history" element={<History />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/plans" element={<Plans />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         </div>

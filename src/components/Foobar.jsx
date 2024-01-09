@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { home, homeActive, ticketActive, chatActive, historyActive, Ticket, Chat, history } from "../assets";
 import { useGlobalStore } from "../context/useGlobalStore";
 import Button from "./button/Button";
+import { FaUser } from "react-icons/fa6";
 
 const Foobar = () => {
   const location = useLocation();
@@ -42,13 +43,13 @@ const Foobar = () => {
           className={`foobar__link ${location.pathname === "/plans" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>
-      <Link to={"/contact"}>
+      <Link to={"/profile"}>
         <Button
-          text={"Contact"}
+          text={"Profile"}
           onClick={nonActiveState}
           type="button"
-          icon={<img width={36} height={36} alt="Contact Page" src={location.pathname === "/contact" ? chatActive : Chat} />}
-          className={`foobar__link ${location.pathname === "/contact" ? "text-[#15C7B3]" : ""}`}
+          icon={<FaUser size={30} color={location.pathname === "/profile" ? "#15C7B3" : "white"} />}
+          className={`foobar__link ${location.pathname === "/profile" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>
     </nav>

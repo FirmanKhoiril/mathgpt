@@ -26,11 +26,12 @@ const SendingProblems = ({ isMic, isPlaceholder }) => {
        {/* Math Live */}
                    <MathInput
                      setValue={setMathValue}
+                    
                      setMathfieldRef={(mathfield) =>
                        (firstMathfieldRef.current = mathfield)
                      }
                      
-                     divisionFormat="obelus"
+                    //  divisionFormat="obelus"
                    />
             </div>
     ) : (

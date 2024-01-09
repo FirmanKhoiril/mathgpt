@@ -22,6 +22,7 @@ import ToogleCustomization from "./button/ToogleCustomization";
 import DropdownSelectedAi from "./DropdownSelectedAi";
 import MobileRegister from "./layout/MobileRegister";
 import Home from "./layout/Home";
+import EditProfileModal from "./EditProfilePopup";
 import ImagePreview from "./ImagePreview";
 import ButtonPreviewSendMail from "./button/ButtonPreviewSendMail";
 import Input from "./input/Input";
@@ -33,7 +34,7 @@ import ButtonEmailPreview from "./button/EmailPreview";
 import EmailPreview from "./layout/EmailPreview";
 
 export {
-  Email,
+  Email,EditProfileModal,
   EmailAddName,
   EmailChooseContact,
   Foobar,

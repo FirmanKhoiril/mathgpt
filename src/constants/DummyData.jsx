@@ -153,87 +153,80 @@ export const DataPlans = [
     name: "BASIC",
     id: 1,
     purchased: false,
-    price: "29.99",
-    description: "Candidates looking for specific exam content guidance and clarification.",
+    price: "4.99",
+    description: "For the budding mathematicians.",
     planFeatures: [
       {
         idx: 1,
-        desc: "Strict Adherence to the Learning Objectives outlined in Exam Study Material",
+        desc: "Photo Uploads: Up to 15/month",
       },
       {
         idx: 2,
-        desc: "No Mixing of Content between Different Exams",
+        desc: "Instant Answers: Get solutions to your math problems.",
       },
       {
         idx: 3,
-        desc: "edicated Content and Question Sets for Each Exam",
+        desc: "Share on Social Media: Showcase your math prowess on platforms like Instagram, Facebook, and TikTok.",
       },
       {
         idx: 4,
-        desc: "All Features of FGW Advanced Chatbot",
-      },
-      {
-        idx: 5,
-        desc: "Generate Practice Questions by Topics, Chapters, Sub-chapters",
-      },
-      {
-        idx: 6,
-        desc: "Select Number, Difficulty, and Type of Questions",
-      },
-      {
-        idx: 7,
-        desc: "Generate Flashcards by Topics, Chapters, and Sub-chapters",
-      },
-      {
-        idx: 8,
-        desc: "Detailed Answers with Explanations, References, and Calculator Steps",
-      },
-      {
-        idx: 9,
-        desc: "Integrations with Mathpix API, Hewlett Packard 12C API, and Texas Instruments BA II Plus API",
+        desc: "Access to Web Version: Use MathGPT anytime on our website.",
       },
     ],
   },
   {
     name: "ADVANCED",
     id: 2,
-    price: "39.99",
+    price: "9.99",
     purchased: true,
-    description: "Candidates looking for specific exam content guidance and clarification.",
+    description: "The choice for the dedicated learner.",
+    // 
+
+
+
+
+
+
+
+
+
     planFeatures: [
       {
-        desc: "Strict Adherence to the Learning Objectives outlined in Exam Study Material",
+        desc: "Unlimited Photo Uploads: Never be restricted by limits.",
       },
       {
-        desc: "No Mixing of Content between Different Exams",
+        desc: "Instant Answers: Get solutions to your math problems.",
       },
       {
-        desc: "edicated Content and Question Sets for Each Exam",
+        desc: "Share on Social Media: Showcase your math prowess on platforms like Instagram, Facebook, and TikTok.",
       },
       {
-        desc: "All Features of FGW Advanced Chatbot",
+        desc: "Access to Web Version: Use MathGPT anytime on our website.",
       },
       {
-        desc: "Generate Practice Questions by Topics, Chapters, Sub-chapters",
+        desc: "Detailed Explanations: Dive deep into the methodology behind solutions.",
       },
       {
-        desc: "Select Number, Difficulty, and Type of Questions",
+        desc: "Save to Cloud & Download: Store solutions directly on Google Drive, Dropbox, or OneDrive. Download as PDF or Word.",
       },
       {
-        desc: "Generate Flashcards by Topics, Chapters, and Sub-chapters",
+        desc: "Access to History: Revisit your queries anytime.",
       },
       {
-        desc: "Detailed Answers with Explanations, References, and Calculator Steps",
+        desc: "Customizable Output: Tailor the output format to your preferences.",
       },
       {
-        desc: "Integrations with Mathpix API, Hewlett Packard 12C API, and Texas Instruments BA II Plus API",
+        desc: "Voice-to-Text Functionalities: Speak your math problems and get instant solutions.",
+      },
+      {
+        desc: "AI-Powered Communication: Share insights via AI-generated email or text.",
       },
     ],
   },
   {
     name: "PRO",
     id: 3,
-    price: "74.99",
+    price: "29.99",
     purchased: false,
     description: "Candidates looking for specific exam content guidance and clarification.",
     planFeatures: [
@@ -255,6 +248,7 @@ export const DataPlans = [
       {
         desc: "Select Number, Difficulty, and Type of Questions",
       },
+
       {
         desc: "Generate Flashcards by Topics, Chapters, and Sub-chapters",
       },
@@ -267,6 +261,59 @@ export const DataPlans = [
     ],
   },
 ];
+
+export const examLists = [
+  'CAIA Level 1',
+  'CAIA Level 2',
+  'CFA Level 1',
+  'CFA Level 2',
+  'CFA Level 3',
+  'CFA ESG Investing',
+  'GARP SCR',
+  'FRM Level 1',
+  'FRM level 2',
+  'CIPM Level 1',
+  'CIPM Level 2',
+]
+
+export   const TabList = [
+  'Profile',
+   'Notification Preferences',
+  'Security',
+  'Billing Information',
+   'Data Privacy',
+  'Help and Support',
+   ]
+export const professionalFields = [
+  'Information Technology',
+  'Healthcare',
+  'Finance/Banking',
+  'Education',
+  'Marketing/Advertising',
+  'Legal',
+  'Engineering',
+  'Arts and Design',
+  'Other',
+]
+
+export const studentType = [
+  'Computer Science & IT',
+  'Medicine & Health Sciences',
+  'Business & Economics',
+  'Arts & Humanities',
+  'Social Sciences',
+  'Engineering & Technology',
+  'Natural Sciences',
+  'Law & Legal Studies',
+  'Others',
+]
+export const currentLevelOfEducation = [
+  'High School',
+  'Undergraduate',
+  'Graduate',
+  'Doctorate/Ph.D.',
+  'Other',
+]
 
 export const allContacts = [
   {
