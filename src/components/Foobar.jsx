@@ -6,7 +6,7 @@ import { FaUser } from "react-icons/fa6";
 
 const Foobar = () => {
   const location = useLocation();
-  const { setSendMail, setPreviewEmail, setPreviewImage } = useGlobalStore();
+  const { setSendMail, dark, setPreviewEmail, setPreviewImage } = useGlobalStore();
 
   const nonActiveState = () => {
     setSendMail(false);
@@ -48,7 +48,7 @@ const Foobar = () => {
           text={"Profile"}
           onClick={nonActiveState}
           type="button"
-          icon={<FaUser size={30} color={location.pathname === "/profile" ? "#15C7B3" : "white"} />}
+          icon={<FaUser size={30} color={location.pathname === "/profile" ? "#15C7B3" : dark ? "white" : "black"} />}
           className={`foobar__link ${location.pathname === "/profile" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>

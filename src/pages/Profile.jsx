@@ -24,9 +24,9 @@ export default function Profile() {
   const [currentTab, setCurrentTab] = useState("Profile")
 
   return ( 
-    <main className='px-3 min-h-screen pt-10 pb-20 w-full h-full'>
+    <main className='px-3 min-h-screen pt-10 pb-20  w-full h-full'>
       <div className='card flex flex-col-reverse gap-10 sm:grid grid-cols-12'>
-        <div className='col-span-2'>
+        <div className='col-span-2 '>
            {/* Navigation section with a list of tabs */}
           <nav className='flex flex-col gap-y-3'>
                {/* Mapping through tabList to render individual tabs */}

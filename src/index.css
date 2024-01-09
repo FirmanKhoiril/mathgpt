@@ -16,7 +16,7 @@
 }
 
 .input__edit__profile {
-  @apply outline-none placeholder:text-[12px] rounded-sm text-[12px] py-1.5 px-2.5 dark:bg-black bg-white focus:border-[#15C7B3] border dark:border-white/10 border-black/40
+  @apply outline-none placeholder:text-[12px] rounded-sm text-[12px] py-1.5 px-2.5 dark:bg-black bg-white dark:focus:border-[#15C7B3] focus:border-[#15C7B3] border dark:border-white/10 border-black/40
 }
 .select__edit__profile {
   @apply rounded-sm mt-1 text-[12px] py-1.5 px-2.5 border bg-white dark:bg-black dark:border-white/10 border-black/40

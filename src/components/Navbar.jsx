@@ -62,7 +62,7 @@ const Navbar = () => {
   const home = pathname === "/" && "Hello, ";
   const history = pathname === "/history" ? "History" : home;
   const plans = pathname === "/plans" ? "Plans" : history;
-  const leftNavTitle = pathname === "/contact" ? "Contacts" : plans;
+  const leftNavTitle = pathname === "/profile" ? "Profile" : plans;
 
   // Reset states when Link  is clicked
 

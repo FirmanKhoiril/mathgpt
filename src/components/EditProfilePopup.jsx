@@ -23,7 +23,6 @@ const EditProfilePopup = () => {
         e.preventDefault()
         // all logic after Submitting Edit Profile goes beyond this comments
     }
-    console.log(userType)
 
   return (
     <>
@@ -104,7 +103,6 @@ const EditProfilePopup = () => {
                     <option value={item}>{item}</option>
                 ))}
             </select>
-           
         </div>
         <div className="flex justify-end">
         <button className='bg-primary px-2.5 text-[12px] py-1.5 rounded-sm text-white' type='submit'>Save</button>

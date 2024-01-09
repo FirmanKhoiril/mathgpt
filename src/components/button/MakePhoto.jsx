@@ -33,7 +33,7 @@ const MakePhoto = () => {
      Make a <br /> Photo
    </p>
    {isHovered && (
-        <div className='absolute inset-0 flex items-center justify-center flex-col bg-black bg-opacity-40 cursor-pointer w-[140px] h-auto'>
+        <div className='absolute inset-0 flex items-center justify-center flex-col bg-primary hover:opacity-60 cursor-pointer w-[140px] h-auto'>
           {/* Upload label and input */}
           <label
             htmlFor='file-upload'
