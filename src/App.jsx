@@ -19,7 +19,7 @@ const App = () => {
         {pathname !== "/register" ? <Navbar /> : ""}
 
         {/* All Routes inside this app */}
-        <div className="flex flex-row gap-2 min-h-screen w-full">
+        <div className="flex flex-row gap-2 h-full pb-10 w-full">
           {/* Show SideHistory in specific Page */}
           {(pathname === "/" && selectedAiSolve !== "ai-solve" && !previewEmail && !sendMail && !previewImage) || (pathname !== "/register" && <SideHistory />)}
           <Routes>
