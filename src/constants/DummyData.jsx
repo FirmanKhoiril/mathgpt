@@ -181,15 +181,6 @@ export const DataPlans = [
     purchased: true,
     description: "The choice for the dedicated learner.",
     // 
-
-
-
-
-
-
-
-
-
     planFeatures: [
       {
         desc: "Unlimited Photo Uploads: Never be restricted by limits.",
@@ -214,12 +205,6 @@ export const DataPlans = [
       },
       {
         desc: "Customizable Output: Tailor the output format to your preferences.",
-      },
-      {
-        desc: "Voice-to-Text Functionalities: Speak your math problems and get instant solutions.",
-      },
-      {
-        desc: "AI-Powered Communication: Share insights via AI-generated email or text.",
       },
     ],
   },

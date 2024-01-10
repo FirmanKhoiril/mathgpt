@@ -201,7 +201,7 @@
 }
 
 .input__sending__problems {
-  @apply outline-none border rounded-[5px] h-[45px] text-sm pl-16 pr-3 py-3.5 bg-white dark:border-white border-black dark:bg-foobar w-full placeholder:text-black/70 dark:placeholder:text-white/50;
+  @apply outline-none border rounded-[5px] h-[45px] text-sm pl-14 pr-3 py-3.5 bg-white dark:border-white border-black dark:bg-foobar w-full placeholder:text-black/70 dark:placeholder:text-white/50;
 }
 
 .input__email__add__name {

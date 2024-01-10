@@ -4,6 +4,7 @@ import { MdMicNone } from "react-icons/md";
 import { FaRegKeyboard } from "react-icons/fa6";
 import "//unpkg.com/mathlive";
 import  { useEffect, useRef, useState } from "react";
+import { PiMathOperationsFill } from "react-icons/pi";
 
 const SendingProblems = ({  isPlaceholder }) => {
   const [isMathKeyboard, setIsMathKeyboard] = useState(false)
@@ -34,13 +35,13 @@ const SendingProblems = ({  isPlaceholder }) => {
   return (
     <form onSubmit={handleSubmit} className="relative pb-1 px-1">
       {/* Input Field for Math Problems */}
-      <Button icon={<FaRegKeyboard size={20} color={isMathKeyboard && "#15C7B3"} />} className={`absolute left-6 bottom-4 z-20`} onClick={toogleIsMathKeyboard} />
+      <Button icon={<PiMathOperationsFill size={20} color={isMathKeyboard && "#15C7B3"} />} className={`absolute left-[22px] bottom-4 z-20`} onClick={toogleIsMathKeyboard} />
     {isMathKeyboard ? (
        <div className="bg-white dark:bg-foobar w-full">
        {/* Math Live */}
        <math-field 
         ref={firstMathfieldRef} 
-        style={{fontSize: "1.5rem", display: 'block', border: '1px solid black', paddingLeft: '3.2rem', paddingRight: '4.5rem' }}
+        style={{fontSize: "1.5rem", display: 'block', border: '1px solid black', paddingLeft: '56px', paddingRight: '4.5rem' }}
 
         onInput={evt => setMathValue(evt.target.value)}
       >
