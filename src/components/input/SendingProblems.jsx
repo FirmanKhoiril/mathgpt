@@ -1,13 +1,16 @@
 import { Send } from "../../assets";
 import Button from "../button/Button";
 import { MdMicNone } from "react-icons/md";
-import { FaRegKeyboard } from "react-icons/fa6";
 import "//unpkg.com/mathlive";
 import  { useEffect, useRef, useState } from "react";
 import { PiMathOperationsFill } from "react-icons/pi";
+import {useGlobalStore} from '../../context/useGlobalStore'
 
 const SendingProblems = ({  isPlaceholder }) => {
+  const {dark} = useGlobalStore()
   const [isMathKeyboard, setIsMathKeyboard] = useState(false)
+    // Open math keyboard when pressing the pi math icon on mobile devices
+
   const firstMathfieldRef = useRef();
   const [mathValue, setMathValue] = useState("");
   const handleSubmit = (e) => {
@@ -41,21 +44,12 @@ const SendingProblems = ({  isPlaceholder }) => {
        {/* Math Live */}
        <math-field 
         ref={firstMathfieldRef} 
-        style={{fontSize: "1.5rem", display: 'block', border: '1px solid black', paddingLeft: '56px', paddingRight: '4.5rem' }}
+        style={{fontSize: "1.5rem", color: dark ? "white" : "black", display: 'block', outline: 'none', border: dark ?  '1px solid white' : '1px solid black', paddingLeft: '56px', paddingRight: '4.5rem', backgroundColor: dark ? "#040C34" : "white" }}
 
         onInput={evt => setMathValue(evt.target.value)}
       >
         {mathValue}
       </math-field>
-                   {/* <MathInput
-                     setValue={setMathValue}
-                    
-                     setMathfieldRef={(mathfield) =>
-                       (firstMathfieldRef.current = mathfield)
-                     }
-                     
-                     divisionFormat="obelus"
-                   /> */}
             </div>
     ) : (
       <input type="text" className="input__sending__problems" placeholder={isPlaceholder ? `${isPlaceholder}` : "Write a math Problem..."} />
