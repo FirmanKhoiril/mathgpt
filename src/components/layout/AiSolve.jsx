@@ -5,7 +5,7 @@ import { conversationAi } from "../../constants/DummyData";
 
 const AiSolve = () => {
   return (
-    <div className="w-full px-2 sm:px-4 py-4 flex">
+    <div className="w-full px-2 sm:px-4 pt-4 flex">
       <div className="ai__solve__container">
         <img src={AI} alt="Ai Solver" width={125} height={125} className="absolute right-0 hidden md:block" />
         <div className="flex flex-col gap-2">

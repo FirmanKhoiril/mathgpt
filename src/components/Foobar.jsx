@@ -2,8 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { home, homeActive, ticketActive, chatActive, historyActive, Ticket, Chat, history } from "../assets";
 import { useGlobalStore } from "../context/useGlobalStore";
 import Button from "./button/Button";
-import { FaUser } from "react-icons/fa6";
-
+import { PiUserCircleLight } from "react-icons/pi";
 const Foobar = () => {
   const location = useLocation();
   const { setSendMail, dark, setPreviewEmail, setPreviewImage } = useGlobalStore();
@@ -48,7 +47,7 @@ const Foobar = () => {
           text={"Profile"}
           onClick={nonActiveState}
           type="button"
-          icon={<FaUser size={30} color={location.pathname === "/profile" ? "#15C7B3" : dark ? "white" : "black"} />}
+          icon={<PiUserCircleLight size={30} color={location.pathname === "/profile" ? "#15C7B3" : dark ? "white" : "black"} />}
           className={`foobar__link ${location.pathname === "/profile" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>
