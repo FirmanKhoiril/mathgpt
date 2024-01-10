@@ -175,7 +175,7 @@ export const DataPlans = [
     ],
   },
   {
-    name: "ADVANCED",
+    name: "Pro",
     id: 2,
     price: "9.99",
     purchased: true,
@@ -209,39 +209,44 @@ export const DataPlans = [
     ],
   },
   {
-    name: "PRO",
+    name: "Enterprise",
     id: 3,
-    price: "29.99",
+    price: "Contact Us",
     purchased: false,
-    description: "Candidates looking for specific exam content guidance and clarification.",
+    description: "For those who demand the absolute best.",
     planFeatures: [
       {
-        desc: "Strict Adherence to the Learning Objectives outlined in Exam Study Material",
+        desc: "Unlimited Photo Uploads: Never be restricted by limits.",
       },
       {
-        desc: "No Mixing of Content between Different Exams",
+        desc: "Instant Answers: Get solutions to your math problems.",
       },
       {
-        desc: "edicated Content and Question Sets for Each Exam",
+        desc: "Share on Social Media: Showcase your math prowess on platforms like Instagram, Facebook, and TikTok.",
       },
       {
-        desc: "All Features of FGW Advanced Chatbot",
+        desc: "Access to Web Version: Use MathGPT anytime on our website.",
       },
       {
-        desc: "Generate Practice Questions by Topics, Chapters, Sub-chapters",
+        desc: "Detailed Explanations: Dive deep into the methodology behind solutions.",
       },
       {
-        desc: "Select Number, Difficulty, and Type of Questions",
-      },
-
-      {
-        desc: "Generate Flashcards by Topics, Chapters, and Sub-chapters",
+        desc: "Save to Cloud & Download: Store solutions directly on Google Drive, Dropbox, or OneDrive. Download as PDF or Word.",
       },
       {
-        desc: "Detailed Answers with Explanations, References, and Calculator Steps",
+        desc: "Access to History: Revisit your queries anytime.",
       },
       {
-        desc: "Integrations with Mathpix API, Hewlett Packard 12C API, and Texas Instruments BA II Plus API",
+        desc: "Customizable Output: Tailor the output format to your preferences.",
+      },
+      {
+        desc: "AI-Powered Communication: Share insights via AI-generated email or text.",
+      },
+      {
+        desc: "Priority Support: Jump the queue and get faster assistance.",
+      },
+      {
+        desc: "Additional Feature: A team can create customized features design for your business",
       },
     ],
   },

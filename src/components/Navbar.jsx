@@ -85,7 +85,7 @@ const Navbar = () => {
           </Link>
           <div className="flex items-center gap-3">
             <Link to={"/"}>
-              <Button onClick={nonActiveState} text={"Home"} type="button" className={`${pathname === "/" ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />
+              <Button onClick={nonActiveState} text={"App"} type="button" className={`${pathname === "/" ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />
             </Link>
             <Link to={"/plans"}>
               <Button onClick={nonActiveState} text={" My Plan"} type="button" className={`${pathname === "/plans" ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />

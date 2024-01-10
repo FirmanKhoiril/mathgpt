@@ -17,7 +17,7 @@ const Foobar = () => {
     <nav className="foobar__section">
       <Link to={"/"}>
         <Button
-          text={"Home"}
+          text={"App"}
           icon={<img width={36} height={36} alt="Home Page" src={location.pathname === "/" ? homeActive : home} />}
           onClick={nonActiveState}
           type="button"

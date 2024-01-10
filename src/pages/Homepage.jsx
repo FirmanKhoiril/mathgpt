@@ -10,7 +10,7 @@ const Homepage = () => {
 
   // Use a switch statement to determine which component to render based on the current state
   switch (true) {
-    case selectedValue === "ai-solve":
+    case selectedValue === "ai-solve" || selectedValue === "ai-explainer" || selectedValue === "ai-writer":
       return <AiSolve />;
 
     case previewImage:

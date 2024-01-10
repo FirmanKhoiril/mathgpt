@@ -21,7 +21,7 @@ const App = () => {
         {/* All Routes inside this app */}
         <div className="flex flex-row gap-2 h-full pb-10 w-full">
           {/* Show SideHistory in specific Page */}
-          {(pathname === "/" && selectedAiSolve !== "ai-solve" && !previewEmail && !sendMail && !previewImage) || (pathname !== "/register" && <SideHistory />)}
+          {(pathname === "/" && selectedAiSolve !== "ai-solve" && selectedAiSolve !== "ai-explainer" && selectedAiSolve !== "ai-writer" &&  !previewEmail && !sendMail && !previewImage) || (pathname !== "/register" && <SideHistory />)}
           <Routes>
             <Route
               path="/"
