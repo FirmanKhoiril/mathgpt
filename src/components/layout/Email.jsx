@@ -1,5 +1,6 @@
 import { ToogleCustomization, Button, EmailAddName, Input, SendingProblems, ButtonEmailPreview, ImagePreview, EmailChooseContact, Customization } from "../";
 import { AI } from "../../assets";
+import { FaHighlighter } from "react-icons/fa6";
 
 const Email = () => {
   return (
@@ -56,7 +57,10 @@ const Email = () => {
             
             <div className="flex flex-col gap-2">
             <Customization />
-            <Button className={"rounded-[5px] bg-primary text-center w-[110px] h-10"} text={"Generate"} />
+           <div className="flex items-center flex-row-reverse justify-between gap-2">
+            <Button className={"rounded-[5px] bg-primary text-center px-4 h-10"} text={"Generate"} />
+            <Button className={"rounded-[5px] bg-primary  text-white text-center px-4 h-10"} icon={<FaHighlighter size={20} />} />
+           </div>
             </div>
              
           </div>  
@@ -117,7 +121,10 @@ const Email = () => {
             <Button className={"rounded-[5px] bg-[rgba(0,_0,_0,_0.8)] w-[110px] border border-[rgb(21,_199,_179)] h-10 text-primary text-center"} text={"Remake"} />
             <ButtonEmailPreview />
           </div>
-          <Button className={"rounded-[5px] bg-primary text-center w-[110px] h-10"} text={"Generate"} />
+          <div className="flex items-center flex-row-reverse justify-between gap-2">
+            <Button className={"rounded-[5px] bg-primary text-center px-4 h-10"} text={"Generate"} />
+            <Button className={"rounded-[5px] bg-primary  text-white text-center px-4 h-10"} icon={<FaHighlighter size={20} />} />
+           </div>
         </div>
       </div>
     </section>
