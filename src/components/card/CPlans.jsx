@@ -35,7 +35,7 @@ const CPlans = ({ purchased, name, description, price, planFeatures }) => {
           purchased ? "bg-blue border w-[200px] h-[40px] mt-2  sm:mt-10" : "bg-gradient-to-r from-[#3BC642] from-[34.17%] to-[#3DA488] to-[122.08%] w-[130px] mt-2.5 h-[35px]"
         }`}
       >
-        <p className="text-white">{purchased ? "Cancel Subscription" : "Get Started"}</p>
+        <p className="text-white">{purchased ? "Cancel Subscription" : price === 'Contact Us' ? price : "Downgrade"}</p>
         {/* Optional when is not purchased */}
         {!purchased && <FaAngleRight size={20} color="white" />}
       </button>
