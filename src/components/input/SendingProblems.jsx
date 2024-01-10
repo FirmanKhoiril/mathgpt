@@ -34,7 +34,7 @@ const SendingProblems = ({  isPlaceholder }) => {
   return (
     <form onSubmit={handleSubmit} className="relative pb-1 px-1">
       {/* Input Field for Math Problems */}
-      <Button icon={<FaRegKeyboard size={20} color={isMathKeyboard && "#15C7B3"} />} className={`absolute left-6 ${isMathKeyboard ? "bottom-5" : "bottom-4"} z-20`} onClick={toogleIsMathKeyboard} />
+      <Button icon={<FaRegKeyboard size={20} color={isMathKeyboard && "#15C7B3"} />} className={`absolute left-6 bottom-4 z-20`} onClick={toogleIsMathKeyboard} />
     {isMathKeyboard ? (
        <div className="bg-white dark:bg-foobar w-full">
        {/* Math Live */}
