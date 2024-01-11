@@ -14,7 +14,7 @@ const HelpAndSupport = () => {
       </div>
       <p className='text-sm'>
       You may have a common question. You may find it in the
-      <a href="https://fgw.vercel.app/faq" target='_blank' className='text-blue ml-1'>FAQ</a>
+      <a href="https://swiftintellect.com/faq" target='_blank' className='text-blue ml-1'>FAQ</a>
       </p>
     </div>
   )

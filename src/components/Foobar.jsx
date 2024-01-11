@@ -4,8 +4,8 @@ import { useGlobalStore } from "../context/useGlobalStore";
 import Button from "./button/Button";
 import { PiUserCircleLight } from "react-icons/pi";
 const Foobar = () => {
-  const location = useLocation();
-  const { setSendMail, dark, setPreviewEmail, setPreviewImage } = useGlobalStore();
+  const {pathname} = useLocation();
+  const { setSendMail, dark, setPreviewEmail, selectedAiValue, setPreviewImage } = useGlobalStore();
 
   const nonActiveState = () => {
     setSendMail(false);
@@ -15,13 +15,13 @@ const Foobar = () => {
 
   return (
     <nav className="foobar__section">
-      <Link to={"/"}>
+      <Link to={selectedAiValue !== "" ? `/${selectedAiValue}` : "/ai-solve"}>
         <Button
           text={"App"}
-          icon={<img width={36} height={36} alt="Home Page" src={location.pathname === "/" ? homeActive : home} />}
+          icon={<img width={36} height={36} alt="Home Page" src={pathname === "/ai-solve" || pathname === "/ai-explainer" || pathname === "/ai-writer" ? homeActive : home} />}
           onClick={nonActiveState}
           type="button"
-          className={`foobar__link ${location.pathname === "/" ? "text-[#15C7B3]" : ""}`}
+          className={`foobar__link ${pathname === "/ai-solve" || pathname === "/ai-explainer" || pathname === "/ai-writer" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>
       <Link to={"/history"}>
@@ -29,8 +29,8 @@ const Foobar = () => {
           text={"History"}
           onClick={nonActiveState}
           type="button"
-          icon={<img width={36} height={36} alt="History Page" src={location.pathname === "/history" ? historyActive : history} />}
-          className={`foobar__link ${location.pathname === "/history" ? "text-[#15C7B3]" : ""}`}
+          icon={<img width={36} height={36} alt="History Page" src={pathname === "/history" ? historyActive : history} />}
+          className={`foobar__link ${pathname === "/history" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>
       <Link to={"/plans"}>
@@ -38,8 +38,8 @@ const Foobar = () => {
           text={"Plans"}
           onClick={nonActiveState}
           type="button"
-          icon={<img width={36} height={36} alt="Plans Page" src={location.pathname === "/plans" ? ticketActive : Ticket} />}
-          className={`foobar__link ${location.pathname === "/plans" ? "text-[#15C7B3]" : ""}`}
+          icon={<img width={36} height={36} alt="Plans Page" src={pathname === "/plans" ? ticketActive : Ticket} />}
+          className={`foobar__link ${pathname === "/plans" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>
       <Link to={"/profile"}>
@@ -47,8 +47,8 @@ const Foobar = () => {
           text={"Profile"}
           onClick={nonActiveState}
           type="button"
-          icon={<PiUserCircleLight size={30} color={location.pathname === "/profile" ? "#15C7B3" : dark ? "white" : "black"} />}
-          className={`foobar__link ${location.pathname === "/profile" ? "text-[#15C7B3]" : ""}`}
+          icon={<PiUserCircleLight size={30} color={pathname === "/profile" ? "#15C7B3" : dark ? "white" : "black"} />}
+          className={`foobar__link ${pathname === "/profile" ? "text-[#15C7B3]" : ""}`}
         />
       </Link>
     </nav>

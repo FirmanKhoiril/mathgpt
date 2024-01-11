@@ -6,11 +6,9 @@ import { MdArrowDropDown } from "react-icons/md";
 import { Button, DropdownSelectedAi } from "./";
 import { useGlobalStore } from "../context/useGlobalStore";
 import ToogleDarkTheme from "./button/ToogleDarkTheme";
-import { useSelectedAi } from "../hooks/useSelectedAi";
 
 const Navbar = () => {
-  const { selectedAi, setSelectedAi } = useSelectedAi();
-  const { dark, previewImage, setDark, previewEmail, setSendMail, sendMail, setPreviewEmail, setPreviewImage } = useGlobalStore();
+  const { dark, previewImage, setDark, previewEmail, setSendMail, sendMail, setSelectedAiValue,selectedAiValue, setPreviewEmail, setPreviewImage } = useGlobalStore();
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -25,7 +23,7 @@ const Navbar = () => {
       case previewEmail:
         handlePreviewEmail();
         break;
-      case selectedAiSolve === "ai-solve":
+      case selectedAiValue !== "":
         navigate("/");
         break;
       default:
@@ -36,10 +34,6 @@ const Navbar = () => {
 
   const handlePreviewImage = () => {
     setPreviewImage(false);
-    setSelectedAi((prev) => {
-      prev.set("selected", "ai-solve");
-      return prev;
-    });
   };
 
   const handleSendMail = () => {
@@ -56,8 +50,6 @@ const Navbar = () => {
     setDark(!dark);
   };
 
-  const selectedAiSolve = selectedAi.get("selected");
-
   // Determine the title for the left navigation section
   const home = pathname === "/" && "Hello, ";
   const history = pathname === "/history" ? "History" : home;
@@ -65,7 +57,12 @@ const Navbar = () => {
   const leftNavTitle = pathname === "/profile" ? "Profile" : plans;
 
   // Reset states when Link  is clicked
-
+  const backHome = () => {
+    setSelectedAiValue("")
+    setSendMail(false);
+    setPreviewEmail(false);
+    setPreviewImage(false);
+  }
   const nonActiveState = () => {
     setSendMail(false);
     setPreviewEmail(false);
@@ -78,15 +75,17 @@ const Navbar = () => {
       <div className="w-full sm:flex flex-row items-center gap-2 lg:gap-4 hidden">
         <div className="navbar__large__devices">
           {/* Link for to specific url */}
-          <Link onClick={nonActiveState} to={"/"}>
+          <Link onClick={backHome} to={"/"}>
             <div className="navbar__logo">
               <img src={logo} alt="Logo MathGpt" width={60} height={60} />
             </div>
           </Link>
           <div className="flex items-center gap-3">
-            <Link to={"/"}>
-              <Button onClick={nonActiveState} text={"App"} type="button" className={`${pathname === "/" ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />
-            </Link>
+              
+              <Link to={selectedAiValue !== "" ? `/${selectedAiValue}` : "/ai-solve"} >
+              <Button onClick={nonActiveState} text={"App"} type="button" className={`${pathname === '/ai-solve' || pathname === '/ai-explainer' || pathname === '/ai-writer' ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />
+              </Link>
+
             <Link to={"/plans"}>
               <Button onClick={nonActiveState} text={" My Plan"} type="button" className={`${pathname === "/plans" ? "text-primary underline " : "text-black dark:text-white"} navbar__link`} />
             </Link>
@@ -109,11 +108,11 @@ const Navbar = () => {
         <div className="flex pt-4 items-center justify-between">
           {/* Page Title Section */}
           <h1 className="text-2xl font-bold">
-            {selectedAiSolve || previewImage || sendMail || previewEmail ? <Button onClick={handleGoBack} type={"button"} className={"p-2 bg-primary rounded-full"} icon={<IoChevronBackOutline size={20} />} /> : <span> {leftNavTitle}</span>}
-            <span className="text-primary">{previewImage || selectedAiSolve || sendMail || previewEmail ? "" : home && "John"}</span>
+            {selectedAiValue || previewImage || sendMail || previewEmail ? <Button onClick={handleGoBack} type={"button"} className={"p-2 bg-primary rounded-full"} icon={<IoChevronBackOutline size={20} />} /> : <span> {leftNavTitle}</span>}
+            <span className="text-primary">{previewImage || selectedAiValue || sendMail || previewEmail ? "" : home && "John"}</span>
           </h1>
           {/* AI Dropdown or Current Page Indicator */}
-          {selectedAiSolve ? <DropdownSelectedAi /> : <h1 className="font-semibold text-[20px]">{previewImage || previewEmail ? "Preview" : sendMail && "Email"}</h1>}
+          {selectedAiValue ? <DropdownSelectedAi /> : <h1 className="font-semibold text-[20px]">{previewImage || previewEmail ? "Preview" : sendMail && "Email"}</h1>}
           {/* User Profile Image */}
           <img src={user} alt="User Profile" width={50} height={50} />
         </div>

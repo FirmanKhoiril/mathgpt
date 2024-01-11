@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useSelectedAi } from "../hooks/useSelectedAi";
-import {useLocation} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
+import { useGlobalStore } from "../context/useGlobalStore";
 
 const DropdownSelectedAi = () => {
-  const { setSelectedAi, selectedAi } = useSelectedAi();
-  const [selectedAiValue, setSelectedAiValue] = useState(selectedAi.get("selected"));
+  const navigate = useNavigate()
+  const {selectedAiValue} = useGlobalStore()
+
 
   const aiSelectedOptions = [
     {
@@ -21,23 +21,10 @@ const DropdownSelectedAi = () => {
     },
   ];
 
-  useEffect(() => {
-    // Update the global state when the local state changes
-    setSelectedAi((prev) => {
-      prev.set("selected", selectedAiValue);
-      return prev
-    });
-    
-    // Save the selectedAiValue to localStorage
-  }, [ selectedAi]);
 
   const handleSelectChange = (e) => {
     const selectedValue = e.currentTarget.value;
-    setSelectedAi((prev) => {
-      prev.set("selected", selectedValue);
-      return prev
-    });
-    setSelectedAiValue(selectedValue);
+    navigate(`/${selectedValue}`)
   };
 
   return (

@@ -32,12 +32,13 @@ import EmailAddName from "./input/EmailAddName";
 import EmailChooseContact from "./input/EmailChooseContact";
 import ButtonEmailPreview from "./button/EmailPreview";
 import EmailPreview from "./layout/EmailPreview";
+import SosialMediaShare from "./modal/SosialMediaShare";
 
 export {
   Email,EditProfileModal,
   EmailAddName,
   EmailChooseContact,
-  Foobar,
+  Foobar,SosialMediaShare,
   EmailPreview,
   Home,
   ButtonShowPreviewImage,

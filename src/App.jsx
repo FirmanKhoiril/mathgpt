@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import {  History, Homepage, Plans, Profile, Register } from "./pages";
-import { EditProfileModal, Foobar, Navbar, SideHistory } from "./components";
+import {  History, Homepage, Plans, Profile, Register,SelectedAI } from "./pages";
+import { EditProfileModal, Foobar, Navbar, SideHistory, SosialMediaShare } from "./components";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 import { useSelectedAi } from "./hooks/useSelectedAi";
 import { useGlobalStore } from "./context/useGlobalStore";
@@ -8,16 +8,16 @@ import { useGlobalStore } from "./context/useGlobalStore";
 const App = () => {
   const { pathname } = useLocation();
   const { selectedAi } = useSelectedAi();
-  const { sendMail, previewImage, previewEmail, dark,isEditProfile } = useGlobalStore();
+  const { sendMail, previewImage,isShowShareSosialMedia, previewEmail, dark,isEditProfile } = useGlobalStore();
   const selectedAiSolve = selectedAi.get("selected");
 
   return (
     <main className={`${dark ? "dark" : "light"} relative w-full font-roboto overflow-hidden h-full`}>
       {/* dark condition for themes */}
       {isEditProfile && <EditProfileModal />}
+      {isShowShareSosialMedia && <SosialMediaShare />}
       <div className="main__section">
         {pathname !== "/register" ? <Navbar /> : ""}
-
         {/* All Routes inside this app */}
         <div className="flex flex-row gap-2 h-full pb-10 w-full">
           {/* Show SideHistory in specific Page */}
@@ -31,6 +31,7 @@ const App = () => {
                 // </ProtectedRoute> 
               }
             />
+            <Route path="/:selected" element={<SelectedAI />} />
             <Route path="/history" element={<History />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/plans" element={<Plans />} />

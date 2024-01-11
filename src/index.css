@@ -209,7 +209,7 @@
 }
 
 .ai__solve__container {
-  @apply w-[90%] relative sm:w-[65%] rounded-[5px] flex-col justify-between flex mx-auto border-black/30 dark:border-white/50 h-auto sm:h-[808px] border;
+  @apply w-[100%] relative sm:w-[65%] rounded-[5px] flex-col justify-between flex mx-auto border-black/30 dark:border-white/50 h-auto sm:h-[808px] border;
 }
 
 .ai__solve__top__section {

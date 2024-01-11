@@ -1,13 +1,10 @@
-import { useSelectedAi } from "../../hooks/useSelectedAi";
+import {useNavigate} from 'react-router-dom'
 
 const Explore = ({ name, description, image, url }) => {
-  const { setSelectedAi } = useSelectedAi();
+  const navigate = useNavigate()
 
   const handleClick = () => {
-    setSelectedAi((prev) => {
-      prev.set("selected", url);
-      return prev;
-    });
+    navigate(`/${url}`)
   };
 
   return (

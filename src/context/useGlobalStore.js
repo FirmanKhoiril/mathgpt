@@ -9,8 +9,11 @@ export const useGlobalStore = create((set) => ({
   // Password Visibility State
   showPassword: false,
   setShowPassword: (showPassword) => set({ showPassword }),
-
-
+  selectedAiValue: "",
+  setSelectedAiValue: (selectedAiValue) => set({selectedAiValue}),
+  setIsShowShareSosialMedia: (isShowShareSosialMedia) => set({isShowShareSosialMedia}),
+  isShowShareSosialMedia: false,
+ 
   isEditProfile: false,
   setIsEditProfile: (isEditProfile) => set({isEditProfile}),
 

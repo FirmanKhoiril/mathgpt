@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FiUpload } from 'react-icons/fi'
+import { user } from '../assets'
 
 // ProfilePicture component
 const ProfilePicture = () => {
@@ -36,7 +37,7 @@ const ProfilePicture = () => {
     >
       {/* Profile picture image */}
       <img
-        src={image}
+        src={user}
         alt='Profile'
         className='w-32 h-auto object-cover rounded-full'
       />
