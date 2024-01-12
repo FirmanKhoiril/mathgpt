@@ -21,15 +21,10 @@ const UploadFile = () => {
                 setPdfFile(e.target.result)
                 setPdfName(file.name)
             }
-        } else {
-            setPdfError("Not a valid .pdf File")
-            setPdfName(null)
-            setPdfFile(null)
         }
-      } else {
-        setPdfError("Not a valid .pdf File")   
+        setPdfError("Not a valid .pdf File")
         setPdfName(null)
-            setPdfFile(null)
+        setPdfFile(null) 
       }
     }
 
