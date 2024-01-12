@@ -1,39 +1,48 @@
 import { useState } from "react";
 import { uploadFile } from "../assets";
-import { FiUpload } from "react-icons/fi";
+import { useGlobalStore } from "../context/useGlobalStore";
 
 const UploadFile = () => {
+  const {setPdfFile,setPdfName, pdfName} = useGlobalStore()
   const [isHovered, setIsHovered] = useState(false) 
+  const [pdfError, setPdfError] = useState("")
 
-
-    // Function to handle image change when uploading
+  const allowedFile = ["application/pdf"]
+  
+  // Function to handle image change when uploading
     const handleImageChange = (e) => {
-      const file = e.target.files?.[0]
-      const reader = new FileReader()
-  
-      // Update the image URL when the file is read
-      reader.onloadend = () => {
-        if (typeof reader.result === 'string') {
-          setImage(reader.result)
+      let file = e.target.files[0]
+      if(file) {
+        if(file && allowedFile.includes(file.type)) {
+            let reader = new FileReader()
+            reader.readAsDataURL(file)
+            reader.onloadend= (e) => {
+                setPdfError("")
+                setPdfFile(e.target.result)
+                setPdfName(file.name)
+            }
+        } else {
+            setPdfError("Not a valid .pdf File")
+            setPdfName(null)
+            setPdfFile(null)
         }
-      }
-  
-      // Read the file as a data URL
-      if (file) {
-        reader.readAsDataURL(file)
+      } else {
+        setPdfError("Not a valid .pdf File")   
+        setPdfName(null)
+            setPdfFile(null)
       }
     }
 
    return (
-    <div className="upload__file relative"
+    <div className="upload__file relative group"
     onMouseEnter={() => setIsHovered(true)}
     onMouseLeave={() => setIsHovered(false)}
     >
       <img src={uploadFile} width={30} height={30} alt="Upload File Icon" />
-      <p className="w-[95px]">
-        Upload <br /> File
+      <p className="w-[95px] group-hover:opacity-0 opacity-100">
+      {pdfError  ? <span className="text-red-500">{pdfError}</span> : <span>Upload <br /> File</span> }
       </p>
-      {isHovered &&  <div className='absolute inset-0 flex items-center w-[140px] justify-center bg-primary/60 opacity-40 cursor-pointer h-auto'>
+      {isHovered &&  <div className='absolute inset-0 group-hover:opacity-100 flex items-center w-[140px] justify-center bg-primary/60 opacity-40 cursor-pointer h-auto'>
           {/* Upload label and input */}
           <label
             htmlFor='file-upload'
@@ -41,12 +50,11 @@ const UploadFile = () => {
           >
             <img src={uploadFile} width={30} height={30} alt="Upload File Icon" />
       <p className="w-[95px]">
-        Upload <br /> File
+      {pdfError ? <span className="text-red-500 font-semibold">{pdfError}</span> : <span>Upload <br /> File</span> }
       </p>
             <input
               type='file'
               id='file-upload'
-              accept='image/*'
               onChange={handleImageChange}
               className='hidden'
             />

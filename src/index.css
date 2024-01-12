@@ -105,8 +105,12 @@
   @apply flex gap-2 flex-col text-[12px];
 }
 
+.viewer{
+  @apply bg-[#e4e4e4] scrollbar-thin scrollbar-thumb-[#15C7B3] scrollbar-track-white scrollbar-corner-[#15C7B3] relative max-h-[508px]  rounded-lg overflow-y-auto mb-2.5 pb-2 w-[454px];
+}
+
 .dropdown__selected__ai__container {
-  @apply flex h-[40px] w-[147px] bg-white px-6 dark:bg-foobar border text-primary border-[#15C7B3] rounded-[5px] items-center justify-around;
+  @apply flex h-[40px] w-[147px] bg-white px-4 dark:bg-foobar border text-primary border-[#15C7B3] rounded-[5px] items-center justify-around;
 }
 
 .customization__container {

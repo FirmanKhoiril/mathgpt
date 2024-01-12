@@ -6,7 +6,7 @@ import { useGlobalStore } from "../../context/useGlobalStore";
 import { useSelectedAi } from "../../hooks/useSelectedAi";
 
 const ButtonPreviewSendMail = () => {
-  const { setSendMail, setPreviewImage, setIsShowShareSosialMedia } = useGlobalStore();
+  const { setSendMail, setPreviewImage, setIsShowShareSosialMedia, pdfFile, pdfName } = useGlobalStore();
   const { setSelectedAi } = useSelectedAi();
 
   const handleNextSendEmail = () => {
@@ -42,7 +42,7 @@ const ButtonPreviewSendMail = () => {
       {/* Button Share and Save */}
       <div className="flex items-center gap-2 sm:gap-1 lg:gap-2">
         <Button type={"button"} onClick={handleShowSosialMediaShare} className={"flex  items-center border  rounded-[5px]"} icon={<MdShare size={25} />} />
-        <a href={pdfTwo} download={"Example-PDF-Document"} target="_blank" rel="noreferrer">
+        <a href={pdfFile ? pdfFile : pdfTwo} download={pdfName ? pdfName : "Example-Document-Pdf"} target="_blank" rel="noreferrer">
           <Button type={"button"} className={"flex  items-center border  rounded-[5px]"} icon={<IoIosSave size={25} />} />
         </a>
       </div>

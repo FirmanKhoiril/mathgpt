@@ -9,8 +9,10 @@ export const useGlobalStore = create((set) => ({
   // Password Visibility State
   showPassword: false,
   setShowPassword: (showPassword) => set({ showPassword }),
+
   selectedAiValue: "",
   setSelectedAiValue: (selectedAiValue) => set({selectedAiValue}),
+  // showing ShareSosialMedia Popup Modal Component
   setIsShowShareSosialMedia: (isShowShareSosialMedia) => set({isShowShareSosialMedia}),
   isShowShareSosialMedia: false,
  
@@ -44,4 +46,10 @@ export const useGlobalStore = create((set) => ({
   // Side History Panel State
   showSideHistory: false,
   setShowSideHistory: (showSideHistory) => set({ showSideHistory }),
+
+  pdfFile: null,
+  setPdfFile: (pdfFile) => set({pdfFile}),
+  setPdfName: (pdfName) => set({pdfName}),
+  pdfName: null
+
 }));
