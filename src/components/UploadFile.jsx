@@ -35,14 +35,12 @@ const UploadFile = () => {
 
    return (
     <div className="upload__file relative group"
-    onMouseEnter={() => setIsHovered(true)}
-    onMouseLeave={() => setIsHovered(false)}
     >
       <img src={uploadFile} width={30} height={30} alt="Upload File Icon" />
       <p className="w-[95px] group-hover:opacity-0 opacity-100">
       {pdfError  ? <span className="text-red-500">{pdfError}</span> : <span>Upload <br /> File</span> }
       </p>
-      {isHovered &&  <div className='absolute inset-0 group-hover:opacity-100 flex items-center w-[140px] justify-center bg-primary/60 opacity-40 cursor-pointer h-auto'>
+       <div className='absolute inset-0 group-hover:opacity-100 flex items-center w-[136.5px] justify-center bg-primary/60 opacity-40 cursor-pointer h-auto'>
           {/* Upload label and input */}
           <label
             htmlFor='file-upload'
@@ -59,7 +57,7 @@ const UploadFile = () => {
               className='hidden'
             />
           </label>
-        </div>}
+        </div>
     </div>
   );
 };

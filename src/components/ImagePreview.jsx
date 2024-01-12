@@ -5,7 +5,7 @@ import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
 
 // Import the styles
 import '@react-pdf-viewer/core/lib/styles/index.css';
-// Import styles
+// Import styles for react-pdf-viewer by default
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const ImagePreview = () => {
@@ -14,14 +14,13 @@ const ImagePreview = () => {
   const toolbarPluginInstance = toolbarPlugin();
 const { renderDefaultToolbar, Toolbar } = toolbarPluginInstance;
 
-
 const transform  = (slot) => ({
     ...slot,
     // These slots will be empty
     Download: () => <></>,
     DownloadMenuItem: () => <></>,
     Open: () => <></>,
-    OpenmENUItem: () => <></>,
+    OpenMenuItem: () => <></>,
     EnterFullScreen: () => <></>,
     EnterFullScreenMenuItem: () => <></>,
     SwitchTheme: () => <></>,

@@ -14,7 +14,7 @@ function TextBlock({
 
 const PrivacyPolicy = () => {
   return (
-    <div className='overflow-y-auto py-2 px-4 max-h-[26rem] w-full'>
+    <div className='overflow-y-auto py-2 scrollbar-thin scrollbar-thumb-[#15C7B3] scrollbar-track-white scrollbar-corner-[#15C7B3] px-4 max-h-[27rem] w-full'>
         <div className='space-y-4'>
                   <p className='text-lg font-semibold'>Terms and Conditions</p>
                   <div className='text-2'>
