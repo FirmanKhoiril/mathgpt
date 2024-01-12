@@ -92,7 +92,7 @@ const Navbar = () => {
 
             <Link to={"/profile"} className={`navbar__profile__user`}>
               <span className="font-semibold text-[18px] lg:text-[24px] text-white">John_D</span>
-              <MdArrowDropDown size={25} />
+              <MdArrowDropDown size={25} color="white" />
               <img src={user} width={45} height={45} alt="User Profile" />
             </Link>
           </div>
