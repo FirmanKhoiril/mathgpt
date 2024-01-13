@@ -4,7 +4,6 @@ import { useGlobalStore } from "../context/useGlobalStore";
 
 const UploadFile = () => {
   const {setPdfFile,setPdfName, pdfName} = useGlobalStore()
-  const [isHovered, setIsHovered] = useState(false) 
   const [pdfError, setPdfError] = useState("")
 
   const allowedFile = ["application/pdf"]
