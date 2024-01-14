@@ -53,7 +53,7 @@ const WithBorderRounded = ({children}) => {
   return (
     <div className="flex items-start w-full gap-3 sm:gap-6">
      <div>
-      <div className='h-1.5 w-1.5 mt-2 rounded-full bg-black dark:bg-white' />
+      <div className='h-1.5 w-1.5 mt-2 rounded-full bg-black dark:bg-white/80' />
      </div>
       {children}
     </div>
