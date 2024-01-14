@@ -47,13 +47,14 @@ import Send from "./Send.svg";
 import uploadFile from "./uploadFile.svg";
 import thumbsUp from "./thumbsUp.svg";
 import thumbsDown from "./thumbsDown.svg";
+import tiktok from "./tiktok.webp";
 
 //  To make clean export
 
 export {
   expandLeft,
   thumbsDown,
-  thumbsUp,
+  thumbsUp,tiktok,
   uploadFile,
   download,
   Send,

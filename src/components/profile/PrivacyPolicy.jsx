@@ -40,7 +40,7 @@ import { HiMiniMinusSmall } from "react-icons/hi2";
 
 const WithMinusList = ({children}) => {
   return (
-    <div className="flex items-start gap-6">
+    <div className="flex items-start gap-3 sm:gap-6">
         <div>
         <HiMiniMinusSmall className='mt-1' size={20} />
         </div>
@@ -51,7 +51,7 @@ const WithMinusList = ({children}) => {
 
 const WithBorderRounded = ({children}) => {
   return (
-    <div className="flex items-start w-full gap-6">
+    <div className="flex items-start w-full gap-3 sm:gap-6">
      <div>
       <div className='h-1.5 w-1.5 mt-2 rounded-full bg-black dark:bg-white' />
      </div>
@@ -62,7 +62,7 @@ const WithBorderRounded = ({children}) => {
 
 const WithOutlineRounded = ({children}) => {
   return (
-    <div className="flex items-start gap-6">
+    <div className="flex items-start gap-3 sm:gap-6">
       <div>
         <div className='h-[7px] w-[6px] mt-2 rounded-full border border-black dark:border-white' />
       </div>
@@ -76,14 +76,14 @@ const PrivacyPolicy = () => {
     <div className='overflow-y-auto py-2 scrollbar-thin scrollbar-thumb-[#15C7B3] scrollbar-track-white scrollbar-corner-[#15C7B3] px-2 sm:px-4 max-h-[30em] sm:max-h-[85vh] w-full'>
         <div className='space-y-4'>
                   <h1 className='text-lg font-semibold'>How to use the Software:</h1>
-                  <div className='text-black/80 px-8 sm:px-12 pt-4 w-full space-y-8 dark:text-slate-400'>
+                  <div className='text-black/80 px-8 sm:px-12 pt-4 w-full space-y-8 dark:text-slate-300'>
                    <p className='text-lg font-semibold text-black dark:text-white'>multiple file QnA( Web app)</p>
                    <img src={UploadFile} alt='Upload File Panel' width={400} height={400} className='max-w-[780px] rounded-md w-full mx-auto' />
                    <p>User has two choice (Top left Panel)</p>
                     <div className='w-full border border-black dark:border-white' />
                     <div className="px-4 sm:px-10">
                       <WithMinusList>
-                        <p className=' sm:text-base text-xs'><strong>Standard</strong> Option (upload multiple files and QnA or summaries all of them at the same time with a single prompt)</p>
+                        <p className=' sm:text-base text-sm'><strong>Standard</strong> Option (upload multiple files and QnA or summaries all of them at the same time with a single prompt)</p>
                       </WithMinusList>
                       <div className=" pt-6 px-1.5 sm:px-12">
                         <WithBorderRounded>
@@ -91,11 +91,11 @@ const PrivacyPolicy = () => {
                         </WithBorderRounded>
                         <div className="pt-8 px-1.5 space-y-6 sm:px-12">
                           <WithOutlineRounded>
-                            <p className=' sm:text-base text-xs'>this section on the bottom left panel appear :</p>
+                            <p className=' sm:text-base text-sm'>this section on the bottom left panel appear :</p>
                           </WithOutlineRounded>
                           <img src={Customization} alt='Customization Component' width={140} height={760} className='rounded-md max-h-[750px] h-full max-w-[350px]' />
                           <WithOutlineRounded>
-                            <p className=' sm:text-base text-xs'>these button disappear</p>
+                            <p className=' sm:text-base text-sm'>these button disappear</p>
                           </WithOutlineRounded>
                           <img src={GenerateAndSendReport} alt="Generate and Send Report Buttons" className='rounded-md' width={230} height={250} />
                         </div>
@@ -347,7 +347,7 @@ const PrivacyPolicy = () => {
                        <div className='w-full border dark:border-white border-black' />
                        <img src={FileUploadHighlightPanel} alt="File Upload Highlight Panel" />
                        <img src={HighlightPanel} alt="Highlight Panel" />
-                       <p className='pt-8'>When the User work on the MS Word document, he can highlight a section of the Text and a pop up window will appear its exactly the same for the Real MS word, however 2 additional function need to be added (AI Replace; AI Replace Upload)</p>
+                       <p className='pt-8 sm:text-base text-sm'>When the User work on the MS Word document, he can highlight a section of the Text and a pop up window will appear its exactly the same for the Real MS word, however 2 additional function need to be added (AI Replace; AI Replace Upload)</p>
                        <div className="pt-6 px-1.5 pb-4 space-y-2 sm:px-12">
                         <WithMinusList>
                         AI Replace : if user click on AI Replace a pop up window will appear,
@@ -375,7 +375,7 @@ const PrivacyPolicy = () => {
                        </div>
                        <p>For example :</p>
                        <div className="pt-6 px-1.5 pb-4 space-y-2 sm:px-12">
-                        <p>The user will select the file press validate</p>
+                        <p className='sm:text-base text-sm'>The user will select the file press validate</p>
                         <img src={UploadFileValidate} alt="UploadFileValidate" width={350}height={350} />
                         <p>Then this pop up will appear</p>
                         <img src={DocumentCustomizePopupPanel} alt="DocumentCustomizePopupPanel" />

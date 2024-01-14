@@ -19,6 +19,8 @@ import { useGlobalStore } from "../../context/useGlobalStore";
 import { FaCopy } from "react-icons/fa";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { useState } from "react";
+import {tiktok} from '../../assets'
+import { FaInstagram } from "react-icons/fa";
 
   const SosialMediaShare = () => {
     const {setIsShowShareSosialMedia,selectedAiValue} = useGlobalStore()
@@ -28,7 +30,7 @@ import { useState } from "react";
     return (
       <>
       <div className="fixed z-40 h-screen w-full bg-black/80" />
-      <div className='fixed z-50 shadow-[4px_8px_4px_8px] shadow-black/10 flex gap-4 flex-col mx-auto top-1/4 inset-0 rounded-lg p-4 max-w-[350px] sm:max-w-[450px] w-full h-[300px] bg-white'>
+      <div className='fixed z-50 shadow-[4px_8px_4px_8px] shadow-black/10 flex gap-3 flex-col mx-auto top-1/4 inset-0 rounded-lg p-3 sm:p-4 max-w-[350px] sm:max-w-[450px] w-full h-[300px] bg-white'>
       <div className="w-full flex justify-between">
       <h1 className="font-semibold text-lg">Sosial Media Sharing</h1>
       <button type="button"  className="p-2 bg-black/10 hover:bg-black/20 rounded-full" onClick={() => setIsShowShareSosialMedia(false)}>
@@ -36,28 +38,33 @@ import { useState } from "react";
       </button>
       </div>
       <p className="pt-2 text-sm px-3">Share this link via</p>
-       <div className="flex w-full items-center pb-2  gap-2 sm:gap-4 justify-center">
-       
+       <div className="flex w-full items-center pb-2 flex-wrap gap-2 justify-center">
+        <a href="https://www.instagram.com" target="_blank" rel={"noreferrer"} className="p-[7px] bg-pink-500 rounded-full">
+          <FaInstagram size={20} color="white" />
+        </a>
           <FacebookShareButton
             windowWidth={760}
             windowHeight={760}
             url={shareUrl}
           >
-            <FacebookIcon size={32} round />
+            <FacebookIcon size={35} round />
           </FacebookShareButton>
+          <a href="https://www.tiktok.com" target="_blank" rel={"noreferrer"}>
+            <img src={tiktok} className="rounded-full" width={33} height={33} alt="Tiktok Share" />
+          </a>
           <TwitterShareButton
             url={shareUrl}
             windowWidth={760}
             windowHeight={760}
             title={title}
           >
-            <XIcon size={32} round />
+            <XIcon size={35} round />
           </TwitterShareButton>
           <TelegramShareButton
             url={shareUrl}
             title={title}
           >
-            <TelegramIcon size={32} round />
+            <TelegramIcon size={35} round />
           </TelegramShareButton>
           <WhatsappShareButton
             url={shareUrl}
@@ -66,14 +73,14 @@ import { useState } from "react";
             title={title}
             separator=":: "
           >
-            <WhatsappIcon size={32} round />
+            <WhatsappIcon size={35} round />
           </WhatsappShareButton>
           <LinkedinShareButton
             windowWidth={760}
             windowHeight={760}
             url={shareUrl}
           >
-            <LinkedinIcon size={32} round />
+            <LinkedinIcon size={35} round />
           </LinkedinShareButton>
           <EmailShareButton
             url={shareUrl}
@@ -82,20 +89,20 @@ import { useState } from "react";
             windowHeight={760}
             body="body"
           >
-            <EmailIcon size={32} round />
+            <EmailIcon size={35} round />
           </EmailShareButton>
-          <RedditShareButton
+          {/* <RedditShareButton
             url={shareUrl}
             subject={title}
             windowWidth={760}
             windowHeight={760}
             body="body"
           >
-            <RedditIcon size={32} round />
-          </RedditShareButton>
+            <RedditIcon size={35} round />
+          </RedditShareButton> */}
        </div>
         <p className="text-sm px-3">Or copy link</p>
-        <div className="border-black/20 rounded-lg relative py-3 border w-full ">
+        <div className="border-black/30 rounded-lg relative py-3 border w-full ">
         <p className="flex items-center gap-0.5">
         <svg
             xmlns="http://www.w3.org/2000/svg"

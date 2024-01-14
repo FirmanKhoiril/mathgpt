@@ -3,9 +3,8 @@ import { pdfTwo } from "../assets";
 import { useGlobalStore } from "../context/useGlobalStore";
 import { toolbarPlugin } from '@react-pdf-viewer/toolbar';
 
-// Import the styles
-import '@react-pdf-viewer/core/lib/styles/index.css';
 // Import styles for react-pdf-viewer by default
+import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const ImagePreview = () => {
@@ -14,6 +13,7 @@ const ImagePreview = () => {
   const toolbarPluginInstance = toolbarPlugin();
 const { renderDefaultToolbar, Toolbar } = toolbarPluginInstance;
 
+// custom tollbar
 const transform  = (slot) => ({
     ...slot,
     // These slots will be empty
@@ -28,7 +28,7 @@ const transform  = (slot) => ({
 });
 
   return (
-    <div className="max-w-[454px]">
+    <div className="max-w-[454px] w-full">
          {pdfFile ? (
   <div className="viewer">
     <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
@@ -40,8 +40,8 @@ const transform  = (slot) => ({
   </div>
     ) :       <img src={pdfTwo} alt="Pdf Microsoft" className="border border-black/50 dark:border-white/50 rounded-t-[5px]" width={454} height={508} />
   }
-      <div className="max-w-[454px] h-[59px] flex border border-black/50 dark:border-white/50 rounded-b-[5px] items-center justify-center ">
-        <p className="font-semibold text-[20px]">{pdfName ? pdfName : "Document01.pdf"}</p>
+      <div className="max-w-[454px] h-[59px] flex w-full border border-black/50 truncate dark:border-white/50 rounded-b-[5px] items-center justify-center ">
+        <p className="font-semibold text-base sm:text-[18px]">{pdfName ? `${pdfName.length >= 34 ? pdfName.slice(0, 35) + "... .pdf" : pdfName}` : "Document01.pdf"}</p>
       </div>
     </div>
   );

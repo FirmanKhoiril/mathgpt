@@ -106,7 +106,7 @@
 }
 
 .viewer{
-  @apply bg-[#e4e4e4] scrollbar-thin scrollbar-thumb-[#15C7B3] scrollbar-track-white scrollbar-corner-[#15C7B3] relative max-h-[508px]  rounded-lg overflow-y-auto mb-2.5 pb-2 w-[454px];
+  @apply bg-[#e4e4e4] scrollbar-thin scrollbar-thumb-[#15C7B3] scrollbar-track-white scrollbar-corner-[#15C7B3] relative max-h-[508px]  rounded-lg overflow-y-auto mb-2.5 pb-2 max-w-[454px];
 }
 
 .dropdown__selected__ai__container {
