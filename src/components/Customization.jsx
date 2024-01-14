@@ -13,7 +13,7 @@ const Customization = () => {
         </div>
       )}
       <div className="flex flex-col gap-3">
-        <select className="customization__dropdown">
+        <select className="customization__dropdown  scrollbar-thin scrollbar-track-black/20 dark:scrollbar-track-white scrollbar-thumb-[#15C7B3]">
           <option>Select Language</option>
           {languageList.map((item) => (
              <option value={item} key={item}>{item}</option>

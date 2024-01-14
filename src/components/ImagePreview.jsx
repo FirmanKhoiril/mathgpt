@@ -8,7 +8,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const ImagePreview = () => {
-  const {pdfFile, pdfName} = useGlobalStore()
+  const {pdfFile, pdfName, imageOriginalFile, urlImage} = useGlobalStore()
 
   const toolbarPluginInstance = toolbarPlugin();
 const { renderDefaultToolbar, Toolbar } = toolbarPluginInstance;
@@ -27,6 +27,7 @@ const transform  = (slot) => ({
     SwitchThemeMenuItem: () => <></>,
 });
 
+const fileName = pdfName ? `${pdfName.length >= 34 ? pdfName.slice(0, 35) + "... .pdf" : pdfName}` : imageOriginalFile ? `${imageOriginalFile.length >= 34 ? imageOriginalFile.slice(0, 35) + "..." : imageOriginalFile}` :  "Document01.pdf"
   return (
     <div className="max-w-[454px] w-full">
          {pdfFile ? (
@@ -38,10 +39,10 @@ const transform  = (slot) => ({
         <Viewer  plugins={[toolbarPluginInstance]} fileUrl={pdfFile} />
     </Worker>
   </div>
-    ) :       <img src={pdfTwo} alt="Pdf Microsoft" className="border border-black/50 dark:border-white/50 rounded-t-[5px]" width={454} height={508} />
+    ) :  urlImage ?  <img src={urlImage} alt={imageOriginalFile} className="border max-w-[454px] border-black/50 dark:border-white/50 rounded-t-[5px]" width={454} height={508} /> :   <img src={pdfTwo} alt="Pdf Microsoft" className="border border-black/50 dark:border-white/50 rounded-t-[5px]" width={454} height={508}/>   
   }
       <div className="max-w-[454px] h-[59px] flex w-full border border-black/50 truncate dark:border-white/50 rounded-b-[5px] items-center justify-center ">
-        <p className="font-semibold text-base sm:text-[18px]">{pdfName ? `${pdfName.length >= 34 ? pdfName.slice(0, 35) + "... .pdf" : pdfName}` : "Document01.pdf"}</p>
+        <p className="font-semibold text-base sm:text-[18px]">{fileName}</p>
       </div>
     </div>
   );

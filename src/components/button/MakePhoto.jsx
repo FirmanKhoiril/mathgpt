@@ -1,39 +1,36 @@
-import { useState } from "react";
 import { IoIosCamera } from "react-icons/io";
-
-
+import {useGlobalStore} from '../../context/useGlobalStore'
 
 const MakePhoto = () => {
-  const [isHovered, setIsHovered] = useState(false)
+ const {pdfFile, pdfName, setPdfFile, setPdfName, setImageOriginalFile, setUrlImage} = useGlobalStore()
 
-  
   // Function to handle image change when uploading
-  const handleImageChange = (e) => {
-    const file = e.target.files?.[0]
-    const reader = new FileReader()
 
-    // Update the image URL when the file is read
-    reader.onloadend = () => {
-      if (typeof reader.result === 'string') {
-        setImage(reader.result)
+    const handleImageChange = (e) => {
+      const file = e.target.files;
+    
+      if (file) {
+        const imageUrl = URL.createObjectURL(file[0]);
+    
+        if (pdfFile && pdfName) {
+          setPdfFile(null);
+          setPdfName(null);
+          setUrlImage(imageUrl);
+          setImageOriginalFile(file.name);
+        }
+          setUrlImage(imageUrl);
+          setImageOriginalFile(file.name);
       }
-    }
-
-    // Read the file as a data URL
-    if (file) {
-      reader.readAsDataURL(file)
-    }
-  }
+    };
+  
 
   return (
-    <button type="button"  onMouseEnter={() => setIsHovered(true)}
-    onMouseLeave={() => setIsHovered(false)} className="btn__make__photo">
-   <IoIosCamera size={30} />
-   <p className="w-[95px]">
-     Make a <br /> Photo
-   </p>
-   {isHovered && (
-        <div className='absolute inset-0 flex items-center justify-center flex-col bg-primary hover:opacity-60 cursor-pointer w-[140px] h-auto'>
+      <button type="button"  className="btn__make__photo group  hover:opacity-100">
+          <IoIosCamera size={30} />
+          <p className="w-[95px]">
+            Make a <br /> Photo
+          </p>
+        <div className='absolute inset-y-0 group-hover:opacity-100 flex items-center w-[136.5px] justify-center bg-primary/60 opacity-40 cursor-pointer h-auto'>
           {/* Upload label and input */}
           <label
             htmlFor='file-upload'
@@ -43,15 +40,13 @@ const MakePhoto = () => {
             Make a <br /> Photo
             <input
               type='file'
-              id='file-upload'
-              accept='image/*'
               onChange={handleImageChange}
               className='hidden'
             />
           </label>
         </div>
-      )}
- </button>
+      </button>
+
   );
 };
 

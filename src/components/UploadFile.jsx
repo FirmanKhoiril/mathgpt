@@ -3,14 +3,14 @@ import { uploadFile } from "../assets";
 import { useGlobalStore } from "../context/useGlobalStore";
 
 const UploadFile = () => {
-  const {setPdfFile,setPdfName, pdfName} = useGlobalStore()
+  const {setPdfFile,setPdfName, imageOriginalFile, setImageOriginalFile, setUrlImage, urlImage} = useGlobalStore()
   const [pdfError, setPdfError] = useState("")
 
   const allowedFile = ["application/pdf"]
   
   // Function to handle image change when uploading
     const handleImageChange = (e) => {
-      let file = e.target.files[0]
+      const file = e.target.files[0]
       if(file) {
         if(file && allowedFile.includes(file.type)) {
             let reader = new FileReader()
@@ -20,6 +20,16 @@ const UploadFile = () => {
                 setPdfFile(e.target.result)
                 setPdfName(file.name)
             }
+        } else if(imageOriginalFile && urlImage) {
+          setImageOriginalFile(null)
+          setUrlImage(null)
+          let reader = new FileReader()
+          reader.readAsDataURL(file)
+          reader.onloadend= (e) => {
+              setPdfError("")
+              setPdfFile(e.target.result)
+              setPdfName(file.name)
+          }
         }
         setPdfError("Not a valid .pdf File")
         setPdfName(null)

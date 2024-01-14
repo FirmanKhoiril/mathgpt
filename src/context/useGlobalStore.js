@@ -47,11 +47,16 @@ export const useGlobalStore = create((set) => ({
   showSideHistory: false,
   setShowSideHistory: (showSideHistory) => set({ showSideHistory }),
 
-  // to make pdf upload work 
+  // to make pdf upload pdf work 
   pdfFile: null,
   pdfName: null,
   setPdfFile: (pdfFile) => set({pdfFile}),
   setPdfName: (pdfName) => set({pdfName}),
 
+  //  to make pdf upload image work 
+  imageOriginalFile: null,
+  setImageOriginalFile: (imageOriginalFile) => set({imageOriginalFile}),
+  urlImage: null,
+  setUrlImage: (urlImage) => set({urlImage})
 
 }));

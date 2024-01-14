@@ -47,7 +47,7 @@ return (
   <form onSubmit={handleSubmit} className="relative pb-1 px-1">
     {/* Input Field for Math Problems */}
     <Button 
-      icon={<PiMathOperationsFill size={20} color={isMathKeyboard && "#15C7B3"} />} 
+      icon={<PiMathOperationsFill size={20} color={isMathKeyboard ? "#15C7B3" : dark ? "white" : "black"} />} 
       className={`absolute left-[22px] bottom-4 z-20`} 
       onClick={toggleIsMathKeyboard} 
     />

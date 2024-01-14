@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-html5-camera-photo": "^1.5.11",
     "react-icons": "^4.12.0",
+    "react-images-uploading": "^3.1.7",
     "react-math-keyboard": "^1.5.5",
     "react-mathquill": "^1.0.3",
     "react-router-dom": "^6.21.0",
